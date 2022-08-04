@@ -67,6 +67,8 @@ noremap <Leader>w :w<CR>:Bdelete<CR>
 
 " toggle tree  
 noremap <Leader>t :NvimTreeToggle<CR>
+noremap <Leader>r :NvimTreeRefresh<CR>
+
 
 " remove highlight
 nnoremap <Leader><space> :noh<cr>
