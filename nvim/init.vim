@@ -58,6 +58,9 @@ nnoremap <silent><C-l> :BufferLineCycleNext<CR>
 nnoremap <silent><S-Left> :BufferLineCyclePrev<CR>
 nnoremap <silent><C-h> :BufferLineCyclePrev<CR>
 
+" configure code actions
+nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>
+
 " bbye-vim
 nnoremap <Leader>q :Bdelete!<CR>
 noremap <Leader>w :w<CR>:Bdelete<CR>
