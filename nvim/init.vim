@@ -3,6 +3,7 @@ lua require('plugins.configs.nvimtree')
 lua require('plugins.configs.telescope')
 lua require('plugins.configs.lualine')
 lua require('plugins.configs.bufferline')
+lua require('plugins.configs.nvim-treesitter')
 lua require('plugins.configs.lazygit')
 lua require('core.lsp')
 " themes
@@ -27,6 +28,12 @@ set clipboard=unnamedplus
 filetype plugin indent on
 syntax on
 set t_Co=256
+
+" Spectre
+nnoremap <leader>S <cmd>lua require('spectre').open()<CR>
+"  search in current file
+nnoremap <leader>sp viw:lua require('spectre').open_file_search()<cr>
+" run command :Spectre
 
 " b-bye vim
 set runtimepath^=~/.vim/bundle/bbye

@@ -40,6 +40,17 @@ return require('packer').startup(function()
 	}
 
 	use { "github/copilot.vim" }
+
+	use { "nvim-lua/plenary.nvim" }
+
+	use {"windwp/nvim-spectre", config = function()
+	  require("spectre").setup()
+	end}
+
+  use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    }
 	
 	use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
 	  require("toggleterm").setup()
