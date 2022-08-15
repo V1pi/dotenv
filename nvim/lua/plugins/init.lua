@@ -75,4 +75,18 @@ return require('packer').startup(function()
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
   use { 'neovim/nvim-lspconfig', requires = { 'nvim-lua/lsp-status.nvim' } }
+
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup({
+            toggler = {
+              line = '<C-_>',
+            },
+            opleader = {
+              line = '<C-_>',
+            },
+          })
+      end
+  }
 end)
