@@ -178,6 +178,9 @@ assign [class="Google-chrome" instance="google-chrome"] $ws1
 assign [class="Discord" instance="discord"] $ws2
 assign [class="Slack" instance="slack"] $ws2
 
+# Fix android emulator
+for_window [title="^Android Emulator*"] floating enable
+
 # Print screen
 bindsym Print       exec flameshot full
 bindsym Shift+Print exec flameshot gui
@@ -215,10 +218,10 @@ mode "resize" {
 }
 
 # Without resize mode
-bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
-bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
-bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
-bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
+bindsym $mod+Ctrl+l resize shrink width 1 px or 1 ppt
+bindsym $mod+Ctrl+k resize grow height 1 px or 1 ppt
+bindsym $mod+Ctrl+j resize shrink height 1 px or 1 ppt
+bindsym $mod+Ctrl+h resize grow width 1 px or 1 ppt
 
 bindsym $mod+r mode "resize"
 
