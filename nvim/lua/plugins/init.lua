@@ -52,7 +52,7 @@ return require('packer').startup(function()
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
     }
 	
-	use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
+	use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
 	  require("toggleterm").setup()
 	end}
 
