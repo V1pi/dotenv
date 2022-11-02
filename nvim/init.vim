@@ -10,7 +10,7 @@ lua require('core.lsp')
 colorscheme dracula
 
 autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
-autocmd BufWritePre * lua vim.lsp.buf.format({ timeout_ms = 2000 })
+nnoremap <silent> ff <cmd>lua  vim.lsp.buf.format({ timeout_ms = 2000 })<CR>
 
 " Default sets
 set tabstop=2     " Size of a hard tabstop (ts).

@@ -25,6 +25,8 @@ return require('packer').startup(function()
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+  use 'Olical/conjure'
+
 	use 'Mofiqul/dracula.nvim'
 
 	use {
@@ -33,11 +35,6 @@ return require('packer').startup(function()
 	}
 
 	use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
-	
-	use {
-	  'preservim/vim-markdown',
-	  requires = { 'godlygeek/tabular', opt = true }
-	}
 
 	use { "github/copilot.vim" }
 
@@ -61,6 +58,11 @@ return require('packer').startup(function()
 	      mappings = {'<C-u>', '<C-d>'}
 	  }
 	end}
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   use {
     "williamboman/nvim-lsp-installer"
