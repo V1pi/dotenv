@@ -11,7 +11,7 @@ end
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-
+  use 'famiu/bufdelete.nvim'
 	use {
 	  'kyazdani42/nvim-tree.lua',
 	  requires = {
