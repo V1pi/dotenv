@@ -429,10 +429,14 @@ tmux_conf_uninstall_plugins_on_reload=true
 # If terminal supports true color, use the following options.
 set -ga terminal-overrides ",xterm-256color*:Tc"
 set -g default-terminal "xterm-256color"
-bind 's' split-window -h
-bind 'v' split-window -v
-bind 't' new
+bind 'b' split-window -h -c "#{pane_current_path}"
+bind 'v' split-window -v -c "#{pane_current_path}"
+bind 't' new -c "#{pane_current_path}"
 bind 'h' select-pane -L
 bind 'j' select-pane -D
 bind 'k' select-pane -U
 bind 'l' select-pane -R
+bind '<' resize-pane -L 10
+bind '>' resize-pane -R 10
+bind '-' resize-pane -D 10
+bind '+' resize-pane -U 10
