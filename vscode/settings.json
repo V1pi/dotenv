@@ -1,0 +1,47 @@
+{
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "\\",
+    "vim.handleKeys": {
+        "<C-w>": false,
+        "<C-p>": false
+    },
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "editor.fontFamily": "'FiraCode Nerd Font', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 16,
+    "terminal.integrated.shellIntegration.suggestEnabled": true,
+    "terminal.integrated.profiles.windows": {
+        "Cmder": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": ["/k", "C:\\Users\\vinicius.picanco\\cmder\\vendor\\bin\\vscode_init.cmd"]
+        },
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Cmder",
+    "remote.SSH.remotePlatform": {
+        "vagrant-local": "linux"
+    },
+    "workbench.iconTheme": "vscode-icons"
+}
