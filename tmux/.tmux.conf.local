@@ -430,8 +430,8 @@ tmux_conf_uninstall_plugins_on_reload=true
 set -ga terminal-overrides ",xterm-256color*:Tc"
 set -g default-terminal "xterm-256color"
 set-window-option -g mode-keys vi
-bind 'b' split-window -h -c "#{pane_current_path}"
-bind 'v' split-window -v -c "#{pane_current_path}"
+bind '_' split-window -h -c "#{pane_current_path}"
+bind '=' split-window -v -c "#{pane_current_path}"
 bind 't' new -c "#{pane_current_path}"
 bind 'h' select-pane -L
 bind 'j' select-pane -D
@@ -445,3 +445,4 @@ bind-key -T copy-mode-vi v send -X begin-selection
 bind-key -T copy-mode-vi V send -X select-line
 bind-key -T copy-mode-vi Escape send -X clear-selection
 bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+set escape-time 100

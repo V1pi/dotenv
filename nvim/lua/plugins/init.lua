@@ -10,6 +10,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function()
+  use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
   use 'wbthomason/packer.nvim'
   use 'famiu/bufdelete.nvim'
 	use {

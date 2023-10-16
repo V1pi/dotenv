@@ -1,4 +1,5 @@
 lua require('plugins')
+lua require('plugins.configs.dap')
 lua require('plugins.configs.nvimtree')
 lua require('plugins.configs.telescope')
 lua require('plugins.configs.lualine')
@@ -24,7 +25,6 @@ set number
 set relativenumber
 set completeopt=noinsert,menuone,noselect
 set hidden
-set clipboard=unnamedplus
 filetype plugin indent on
 syntax on
 set t_Co=256
@@ -89,14 +89,4 @@ inoremap <A-l> <C-o>l
 " TextEdit might fail if hidden is not set.
 set hidden
 
-" " Copy to clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>Y  "+yg_
-nnoremap  <leader>y  "+y
-nnoremap  <leader>yy  "+yy
-
-" " Paste from clipboard
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
+set clipboard^=unnamed,unnamedplus
