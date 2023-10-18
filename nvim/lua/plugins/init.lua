@@ -10,6 +10,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function()
+  use 'f-person/git-blame.nvim'
   use {
     "microsoft/vscode-js-debug",
     opt = true,

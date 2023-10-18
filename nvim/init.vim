@@ -6,6 +6,7 @@ lua require('plugins.configs.lualine')
 lua require('plugins.configs.bufferline')
 lua require('plugins.configs.nvim-treesitter')
 lua require('plugins.configs.lazygit')
+lua require('plugins.configs.blame')
 lua require('core.lsp')
 " themes
 colorscheme dracula
