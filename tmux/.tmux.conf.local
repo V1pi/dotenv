@@ -432,6 +432,7 @@ set -g default-terminal "xterm-256color"
 set-window-option -g mode-keys vi
 bind '_' split-window -h -c "#{pane_current_path}"
 bind '=' split-window -v -c "#{pane_current_path}"
+bind 'c' new-window -c "#{pane_current_path}"
 bind 't' new -c "#{pane_current_path}"
 bind 'h' select-pane -L
 bind 'j' select-pane -D
@@ -446,3 +447,6 @@ bind-key -T copy-mode-vi V send -X select-line
 bind-key -T copy-mode-vi Escape send -X clear-selection
 bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 set escape-time 100
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+run '~/.tmux/plugins/tpm/tpm'

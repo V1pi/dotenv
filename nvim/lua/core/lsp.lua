@@ -131,8 +131,16 @@ map("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", {})
 map("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", {})
 map("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", {})
 map("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", {})
-map("n", "<space>ca", "<cmd>lua Lspsaga code_action<CR>", {})
+map("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", {})
 map("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>", {})
 map("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", {})
 map("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", {})
 map("n", "<space>q", "<cmd>lua vim.diagnostic.set_loclist()<CR>", {})
+
+vim.diagnostic.config({
+  virtual_text = false
+})
+
+-- Show line diagnostics automatically in hover window
+-- vim.o.updatetime = 250
+-- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
