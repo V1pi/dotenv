@@ -8,7 +8,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +69,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -119,3 +118,52 @@ function ranger {
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# Add a space in the first prompt
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
+# Visual customisation of the second prompt line
+local user_symbol="$"
+if [[ $(print -P "%#") =~ "#" ]]; then
+    user_symbol = "#"
+fi
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
+export CPPFLAGS="-I$(/usr/libexec/java_home)/include"
+export JAVA_INCLUDE_PATH="$(/usr/libexec/java_home)/include/darwin"
+export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/binutils/lib"
+export CPPFLAGS="-I/usr/local/opt/binutils/include"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+export PATH="/Users/v1pi/Documents/Workspaces/Vouch/depot_tools:$PATH"
+SSH_ENV="$HOME/.ssh/environment"
+function start_agent {
+     echo "Initialising new SSH agent..."
+     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+     echo succeeded
+     chmod 600 "${SSH_ENV}"
+     . "${SSH_ENV}" > /dev/null
+     /usr/bin/ssh-add;
+}
+# Source SSH settings, if applicable
+if [ -f "${SSH_ENV}" ]; then
+     . "${SSH_ENV}" > /dev/null
+     #ps ${SSH_AGENT_PID} doesn't work under cywgin
+     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+     }
+else
+     start_agent;
+fi
+##### END Fix for ssh-agent #####
+eval "$(rbenv init - bash)"
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+# export NODE_OPTIONS=--openssl-legacy-provider
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/Users/v1pi/Library/Python/3.11/bin:$PATH"
+export PATH="/Users/v1pi/Library/rar:$PATH"
+
+source /Users/v1pi/.docker/init-zsh.sh || true # Added by Docker Desktop

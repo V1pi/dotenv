@@ -61,6 +61,10 @@ return require('packer').startup(function()
 	  require("toggleterm").setup()
 	end}
 
+	use {"chentoast/marks.nvim", config = function()
+	  require("marks").setup()
+	end}
+
 	use {'karb94/neoscroll.nvim', config = function()
 	  require("neoscroll").setup{
 	      mappings = {'<C-u>', '<C-d>'}
@@ -91,10 +95,10 @@ return require('packer').startup(function()
       config = function()
           require('Comment').setup({
             toggler = {
-              line = '<C-_>',
+              line = '<C-;>',
             },
             opleader = {
-              line = '<C-_>',
+              line = '<C-;>',
             },
           })
       end

@@ -84,3 +84,5 @@ alt + shift - f : yabai -m window --toggle native-fullscreen
 
 cmd - return : osascript ~/dotenv/new-iterm-window.scpt
 
+# Reload  yabai
+ctrl + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"

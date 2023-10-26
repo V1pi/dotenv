@@ -10,7 +10,7 @@ lua require('plugins.configs.blame')
 lua require('core.lsp')
 " themes
 colorscheme dracula
-
+map <C-/> <C-_>
 autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
 nnoremap <silent> ff <cmd>lua  vim.lsp.buf.format({ timeout_ms = 2000 })<CR>
 
@@ -71,8 +71,8 @@ nnoremap <Leader>q :Bdelete!<CR>
 noremap <Leader>w :w<CR>:Bdelete<CR>
 
 " toggle tree  
-noremap <Leader>t :NvimTreeToggle<CR>
-noremap <Leader>r :NvimTreeRefresh<CR>
+noremap <Leader>tt :NvimTreeToggle<CR>
+noremap <Leader>rt :NvimTreeRefresh<CR>
 
 
 " remove highlight

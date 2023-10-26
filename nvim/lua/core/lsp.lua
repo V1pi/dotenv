@@ -52,7 +52,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'eslint' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'eslint', 'clojure_lsp' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
@@ -80,7 +80,7 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<C-_>'] = cmp.mapping(function(fallback)
+    ['<C-.>'] = cmp.mapping(function(fallback)
       local copilot_keys = vim.fn["copilot#Accept"]()
       if copilot_keys ~= "" then
           vim.api.nvim_feedkeys(copilot_keys, "i", true)
