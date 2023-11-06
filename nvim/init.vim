@@ -10,7 +10,11 @@ lua require('plugins.configs.blame')
 lua require('core.lsp')
 " themes
 colorscheme dracula
-map <C-/> <C-_>
+
+if has('mac')
+  map <C-/> <C-_>
+endif
+
 autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
 nnoremap <silent> ff <cmd>lua  vim.lsp.buf.format({ timeout_ms = 2000 })<CR>
 

@@ -81,6 +81,22 @@ cmp.setup {
       select = true,
     },
     ['<C-.>'] = cmp.mapping(function(fallback)
+      if vim.fn.has("mac") == 0 then
+        fallback()
+        return
+      end
+      local copilot_keys = vim.fn["copilot#Accept"]()
+      if copilot_keys ~= "" then
+          vim.api.nvim_feedkeys(copilot_keys, "i", true)
+      else
+          fallback()
+      end
+    end, { 'i', 's'}),
+    ['<C-_>'] = cmp.mapping(function(fallback)
+      if vim.fn.has("mac") == 1 then
+        fallback()
+        return
+      end
       local copilot_keys = vim.fn["copilot#Accept"]()
       if copilot_keys ~= "" then
           vim.api.nvim_feedkeys(copilot_keys, "i", true)
