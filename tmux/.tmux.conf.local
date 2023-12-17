@@ -450,4 +450,4 @@ set escape-time 100
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 run '~/.tmux/plugins/tpm/tpm'
-set-option -g default-shell /bin/zsh
+set-option -g default-shell ${SHELL}
