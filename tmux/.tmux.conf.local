@@ -451,3 +451,4 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 run '~/.tmux/plugins/tpm/tpm'
 set-option -g default-shell ${SHELL}
+set -g @resurrect-dir '~/.tmux/resurrect'
