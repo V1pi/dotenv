@@ -1,4 +1,26 @@
 [
+      // Traverse VSCode IntelliSense suggestions with vim keybindings.
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    // Traverse VSCode quick open options with vim keybindings.
+    {
+        "key": "ctrl+k",
+        "when": "codeActionMenuVisible",
+        "command": "selectPrevCodeAction"
+    },
+    {
+        "key": "ctrl+j",
+        "when": "codeActionMenuVisible",
+        "command": "selectNextCodeAction"
+    },
     {
         "key": "ctrl+shift+e",
         "command": "-workbench.view.explorer"
@@ -74,5 +96,20 @@
     {
         "key": "shift+cmd+2",
         "command": "sqlite.runSelectedQuery"
+    },
+    {
+        "key": "ctrl+meta+.",
+        "command": "editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+.",
+        "command": "-editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
     }
 ]

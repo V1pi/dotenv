@@ -9,10 +9,62 @@
         "<C-w>": false,
         "<C-p>": false
     },
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>","i"],
+            "commands": [
+                "editor.action.goToImplementation"
+            ]
+        },
+        {
+            "before": ["leader", "w"],
+            "commands": [
+                "workbench.action.files.save",
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        {
+            "before": ["leader", "q"],
+            "commands": [
+                ":e!",
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        {
+            "before": ["leader", "e"],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": ["leader", "d"],
+            "commands": [
+                "editor.action.marker.prev"
+            ]
+        },
+        {
+            "before": ["leader", "u"],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        {
+            "before": ["leader", "f"],
+            "commands": [
+                "editor.action.quickFix"
+            ]
+        },
+        {
+            "before": ["leader", "a"],
+            "commands": [
+                "editor.action.sourceAction"
+            ]
+        }
+    ],
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1
     },
-    "editor.fontFamily": "'FiraCode Nerd Font', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'MesloLGS NF', 'FiraCode Nerd Font', Consolas, 'Courier New', monospace",
     "editor.fontSize": 16,
     "terminal.integrated.shellIntegration.suggestEnabled": true,
     "terminal.integrated.profiles.windows": {
