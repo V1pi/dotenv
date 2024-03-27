@@ -9,9 +9,29 @@
         "<C-w>": false,
         "<C-p>": false
     },
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["q", "p"],
+            "commands": [
+                "vscode-postgres.runQuery"
+            ]
+        }
+    ],
     "vim.normalModeKeyBindings": [
         {
-            "before": ["<leader>","i"],
+            "before": ["<leader>", "m"],
+            "commands": [
+                "bookmarks.toggle"
+            ]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": [
+                "bookmarks.list"
+            ]
+        },
+        {
+            "before": ["g","i"],
             "commands": [
                 "editor.action.goToImplementation"
             ]
@@ -49,15 +69,34 @@
             ]
         },
         {
-            "before": ["leader", "f"],
+            "before": ["g", "q"],
             "commands": [
                 "editor.action.quickFix"
             ]
         },
         {
-            "before": ["leader", "a"],
+            "before": ["g", "a"],
             "commands": [
                 "editor.action.sourceAction"
+            ]
+        },
+        {
+            "before": ["g", "r"],
+            "commands": [
+                "editor.action.findReferences"
+            ]
+        },
+        {
+            "before": ["leader", "B"],
+            "commands": [
+                "workbench.action.navigateBackInEditLocations"
+            ]
+        },
+        {
+            "before": ["q", "p"],
+            "after": ["V"],
+            "commands": [
+                "vscode-postgres.runQuery"
             ]
         }
     ],
@@ -95,5 +134,8 @@
     "remote.SSH.remotePlatform": {
         "vagrant-local": "linux"
     },
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "window.zoomLevel": 1,
+    "editor.stickyScroll.enabled": false,
+    "editor.wordWrap": "off"
 }
