@@ -1,4 +1,5 @@
 {
+    "java.autobuild.enabled": false,
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
@@ -83,7 +84,7 @@
         {
             "before": ["g", "r"],
             "commands": [
-                "editor.action.findReferences"
+                "references-view.findReferences"
             ]
         },
         {
@@ -137,5 +138,7 @@
     "workbench.iconTheme": "vscode-icons",
     "window.zoomLevel": 1,
     "editor.stickyScroll.enabled": false,
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "off",
+    "editor.renderWhitespace": "all",
+    "diffEditor.ignoreTrimWhitespace": false
 }
