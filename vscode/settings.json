@@ -99,6 +99,12 @@
             "commands": [
                 "vscode-postgres.runQuery"
             ]
+        },
+        {
+            "before": ["t", "b"],
+            "commands": [
+                "editor.debug.action.toggleBreakpoint"
+            ]
         }
     ],
     "extensions.experimental.affinity": {

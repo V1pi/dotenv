@@ -9,6 +9,11 @@
         "command": "workbench.action.quickOpenNavigatePrevious",
         "when": "inQuickOpen"
     },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.keepEditor",
+        "when": "editorTextFocus"
+    },
     // Traverse VSCode IntelliSense suggestions with vim keybindings.
     {
         "key": "ctrl+j",
