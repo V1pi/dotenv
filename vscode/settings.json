@@ -38,7 +38,7 @@
             ]
         },
         {
-            "before": ["shift", "r"],
+            "before": ["R"],
             "commands": [
                 "java.debug.hotCodeReplace"
             ]
