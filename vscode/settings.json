@@ -38,6 +38,12 @@
             ]
         },
         {
+            "before": ["shift", "r"],
+            "commands": [
+                "java.debug.hotCodeReplace"
+            ]
+        },
+        {
             "before": ["leader", "w"],
             "commands": [
                 "workbench.action.files.save",
@@ -146,5 +152,12 @@
     "editor.stickyScroll.enabled": false,
     "editor.wordWrap": "off",
     "editor.renderWhitespace": "all",
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "sonarlint.focusOnNewCode": true,
+    "sonarlint.connectedMode.connections.sonarqube": [
+        {
+            "serverUrl": "https://sonarqube.aic.serpro",
+            "connectionId": "https-sonarqube-aic-serpro"
+        }
+    ]
 }
